@@ -1,7 +1,26 @@
 const express = require('express');
+const { program } = require("commander");
+const crypto = require("crypto");
+
 const app = express();
 
-let port = 3000;
+let port = 0;
+const portDev = 3000;
+const portQA = 3001;
+const portProd = 3002;
+const args = process.argv;
+
+program.option("--dev", "Modo desarrollo");
+program.option("--qa", "Modo QA");
+program.option("--production", "Modo producción");
+program.option("--generate-password <length>", "Genera una contraseña", parseInt);
+
+program.parse(process.argv);
+const options = program.opts();
+
+if (options.dev) { port = portDev; }
+else if (options.qa) { port = portQA; }
+else if (options.production) { port = portProd; }
 
 // Invertir el orden de las letras.
 // Reemplazar vocales por números:
@@ -54,10 +73,26 @@ app.get("/password", (req, res) => {
   res.send(generatePassword());
 });
 
+app.get("/generate-password", (req, res) => {
+  const length = options.generatePassword;
+  const password = crypto.randomBytes(length).toString('hex').slice(0, length);
+  res.send(password);
+});
+
 // http://localhost:3000/enigma?mensaje=hola
 app.get("/enigma", (req, res) => {
   //console.log(req.query.mensaje);
   res.send(codificar(req.query.mensaje));
+});
+
+app.get("/par-impar/:numero", (req, res) => {
+  const numero = parseInt(req.params.numero);
+  if (isNaN(numero)) {
+    res.send("El parámetro no es un número");
+  }
+  const resultado = numero % 2 === 0 ? "Par" : "Impar";
+  res.send(`El ${numero} es ${resultado}`);
+
 });
 
 app.listen(port, () => {
