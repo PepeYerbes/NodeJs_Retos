@@ -1,59 +1,67 @@
+/**
+ * Servidor Express con configuración de entorno por línea de comandos.
+ *
+ * - http://localhost:{port}/        : Responde con un saludo general.
+ * - http://localhost:{port}/admin   : Responde con un saludo para el administrador.
+ *
+ * El puerto se define según el argumento de entorno:
+ *   --dev        : Puerto 3000 (desarrollo)
+ *   --qa         : Puerto 3001 (QA)
+ *   --production : Puerto 3002 (producción)
+ * Si no se especifica argumento, usa el puerto 3000 por defecto.
+ *
+ * Para ejecutar el servidor:
+ *   node server.js --dev
+ *   node server.js --qa
+ *   node server.js --production
+ */
+
+// Importa el módulo Express, un framework minimalista para aplicaciones web en Node.js.
 const express = require('express');
-const { program } = require('commander');
-const crypto = require('crypto');
 
-
-const app = express();
-
+// Variable para almacenar el puerto según el entorno.
 let port = 0;
-const portDev = 3000;
-const portQA = 3001;
-const portProduction = 3002;
 
-// Configurar el CLI
-program
-  .option('--dev', 'Modo desarrollo')
-  .option('--qa', 'Modo QA')
-  .option('--production', 'Modo producción')
-  .option('--generate-password <length>', 'Generar una contraseña', parseInt);
+// Obtiene el argumento de entorno desde la línea de comandos.
+const enviroment = process.argv[2];
 
-program.parse(process.argv);
-const options = program.opts();
-
-// Asignar el puerto según el argumento
-if (options.dev) {
-  port = portDev;
-} else if (options.qa) {
-  port = portQA;
-} else if (options.production) {
-  port = portProduction;
+// Asigna el puerto según el entorno especificado.
+if (enviroment === '--dev') {
+  port = 3000; // Modo desarrollo
+}
+else if (enviroment === '--qa') {
+  port = 3001; // Modo QA
+}
+else if (enviroment === '--production') {
+  port = 3002; // Modo producción
 } else {
-  port = portDev; // Valor por defecto
+  port = 3000; // Valor por defecto
 }
 
+// Crea una instancia de la aplicación Express.
+const app = express();
+
+/**
+ * Ruta principal.
+ * Responde con un mensaje de saludo general.
+ */
 app.get('/', (req, res) => {
-  res.send('¡Hola estudiantes de ISC07!');
+  res.send('Hello World!');
 });
 
+/**
+ * Ruta /admin.
+ * Responde con un mensaje de saludo para el administrador.
+ */
 app.get('/admin', (req, res) => {
-  res.send('Hola, admin!');
+  res.send('Hello Administrator!');
 });
 
-
-app.get('/generatePassword', (req, res) => {
-  // Generar una contraseña si se solicita
-  if (options.generatePassword) {
-    const length = options.generatePassword;
-    const password = crypto.randomBytes(length).toString('hex').slice(0, length);
-    console.log(`Generated password: ${password}`);
-    res.send(`Generated password: ${password}`);
-  } else {
-    res.send('No password length provided.');
-  }
-});
-
+/**
+ * Inicia el servidor en el puerto especificado.
+ * Imprime en consola el puerto y los argumentos de línea de comandos.
+ */
 app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-  // Mostrar argumentos de línea de comandos
+  console.log(`Server is running on port: ${port}`);
   console.log('Argumentos de línea de comandos:', process.argv);
 });
