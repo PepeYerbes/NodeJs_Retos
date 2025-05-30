@@ -87,11 +87,16 @@ app.get("/enigma", (req, res) => {
 
 app.get("/par-impar/:numero", (req, res) => {
   const numero = parseInt(req.params.numero);
+  const double = req.query.double;
+
   if (isNaN(numero)) {
     res.send("El parámetro no es un número");
   }
   const resultado = numero % 2 === 0 ? "Par" : "Impar";
-  res.send(`El ${numero} es ${resultado}`);
+  const incluirDouble = double === 'true' ? true : false;
+
+  if (incluirDouble) { res.send(`El ${numero} es ${resultado} el doble es: ${numero * 2}`); }
+  else { res.send(`El ${numero} es ${resultado}`); }
 
 });
 
