@@ -1,18 +1,17 @@
 {
-  "name": "practica-node-03",
-  "type": "module",
+  "name": "03",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "description": "## Objetivo",
+  "main": "server.mjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.4.1",
-    "inquirer": "^12.3.3"
+    "inquirer": "^12.6.3"
   }
 }
