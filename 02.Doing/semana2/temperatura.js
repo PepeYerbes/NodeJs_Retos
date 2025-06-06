@@ -5,3 +5,13 @@
 //Usar inquirer para entrada de usuario.
 //
 //Mostrar el resultado con estilo usando boxen.
+
+export function exportCelsiusToFahrenheit(temperatura) {
+  let result = (temperatura * 9 / 5) + 32;
+  return result;
+}
+
+export function exportFahrenheitToCelsius(temperatura) {
+  let result = (temperatura - 32) * 5 / 9;
+  return result;
+}
