@@ -1,5 +1,9 @@
 [
   { "id": 1, "nombre": "Ana", "rol": "Backend Developer" },
   { "id": 2, "nombre": "Luis", "rol": "Frontend Developer" },
-  { "id": 3, "nombre": "Carla", "rol": "Diseñadora UX" }
+  { "id": 3, "nombre": "Carla", "rol": "Diseñadora UX" },
+  { "id": 4, "nombre": "Ana", "rol": "Developer" },
+  { "id": 5, "nombre": "Ernesto", "rol": "UX" },
+  { "id": 6, "nombre": "Pedro", "rol": "UI" },
+  { "id": 7, "nombre": "Karla", "rol": "UI" }
 ]
