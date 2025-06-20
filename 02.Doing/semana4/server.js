@@ -1,53 +1,13 @@
 // Importa el módulo http de Node.js
-const http = require('http');
+import http from 'http';
+import { parseQuery } from './src/middlewares/parseQuery.js';
+import { logger } from './src/middlewares/logger.js';
+import { usersRouter } from './src/routes/userRoutes.js';
+import { loadData } from './src/storage.js';
+
 // Define el puerto en el que escuchará el servidor
 const PORT = 3000;
-
-// Middleware para registrar la solicitud y guardar la fecha/hora en req
-function logEvent(req, res, next) {
-  // Obtiene la fecha y hora actual
-  const dateTime = new Date();
-  // Formatea la fecha
-  const fecha = dateTime.toLocaleDateString();
-  // Formatea la hora
-  const hora = dateTime.toLocaleTimeString();
-  // Imprime en consola la fecha, hora y URL solicitada
-  console.log(`${fecha}-${hora} | Solicitud a ${req.url}`);
-  // Guarda la fecha/hora en el objeto req
-  req.dateTime = dateTime;
-  // Llama al siguiente middleware
-  next();
-}
-
-// Middleware para validar que venga el parámetro name
-function validarNombre(req, res, next) {
-  // Parsea la URL de la solicitud
-  const url = new URL(req.url, `http://${req.headers.host}`);
-  // Obtiene el parámetro 'name' de la query
-  const nombre = url.searchParams.get('name');
-  // Si existe, lo guarda en req
-  if (nombre) { req.nombre = nombre; }
-  // Llama al siguiente middleware
-  next();
-}
-
-// Middleware para validar el parámetro admin
-function isAdmin(req, res, next) {
-  // Parsea la URL de la solicitud
-  const url = new URL(req.url, `http://${req.headers.host}`);
-  // Obtiene el parámetro 'admin' de la query
-  const admin = url.searchParams.get('admin');
-  // Si existe, lo guarda en req como booleano
-  if (admin) { req.admin = (admin === 'true'); }
-  // Llama al siguiente middleware
-  next();
-}
-
-// Función para medir el tiempo de respuesta
-function medirTiempo(beginDate, endDate) {
-  // Retorna la diferencia en milisegundos
-  return endDate - beginDate;
-}
+await loadData();
 
 // Crea el servidor HTTP
 const server = http.createServer((req, res) => {
@@ -58,26 +18,29 @@ const server = http.createServer((req, res) => {
   }
 
   // Encadena los "middlewares" de forma manual
-  logEvent(req, res, () => {
-    validarNombre(req, res, () => {
-      isAdmin(req, res, () => {
-        // Solo responde a la raíz con parámetros
-        if (req.url.startsWith('/?')) {
-          // Si es admin y tiene nombre
-          if (req.admin && req.nombre) {
-            res.end('Welcome Admin ' + req.nombre + ' to your API');
-            // Si no es admin pero tiene nombre
-          } else if (!req.admin && req.nombre) {
-            res.end('Welcome ' + req.nombre);
-          }
+  logger(req, res, () => {
+    parseQuery(req, res, () => {
+      const { pathname, method, query } = req;
+      // Solo responde a la raíz con parámetros
+
+      if (pathname === '/' && method === 'GET') {
+        // Si es admin y tiene nombre
+        if (query.admin === 'true' && query.name) {
+          return res.end('Welcome Admin ' + query.name + ' to your API');
+          // Si no es admin pero tiene nombre
+        } else if (query.name) {
+          return res.end('Welcome ' + query.name);
         } else {
-          // Si la ruta no es válida, responde 404
-          res.statusCode = 404;
-          res.end('404');
+          return res.end(`Welcome! Agrega ?name=tu_nombre`);
         }
-        // Muestra el tiempo de respuesta en consola
-        console.log(`⏱️ Tiempo de respuesta: ${medirTiempo(req.dateTime, new Date())} ms`);
-      });
+      }
+
+      if (usersRouter(req, res) !== false) return;
+
+      // Si la ruta no es válida, responde 404
+      res.statusCode = 404;
+      res.end('404');
+
     });
   });
 });
