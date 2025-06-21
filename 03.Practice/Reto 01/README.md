@@ -13,7 +13,8 @@ Crea una función llamada `sum` que reciba dos números y devuelva su suma.
 
 ```js
 function sum(a, b) {
-  // Tu código aquí
+  return a + b;
+  console.log(resultado);
 }
 ```
 

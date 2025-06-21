@@ -4,6 +4,7 @@ import { parseQuery } from './src/middlewares/parseQuery.js';
 import { logger } from './src/middlewares/logger.js';
 import { usersRouter } from './src/routes/userRoutes.js';
 import { loadData } from './src/storage.js';
+import { productRouter } from './src/routes/productRoutes.js';
 
 // Define el puerto en el que escuchará el servidor
 const PORT = 3000;
@@ -36,6 +37,7 @@ const server = http.createServer((req, res) => {
       }
 
       if (usersRouter(req, res) !== false) return;
+      if (productRouter(req, res) !== false) return;
 
       // Si la ruta no es válida, responde 404
       res.statusCode = 404;
