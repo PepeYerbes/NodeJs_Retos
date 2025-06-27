@@ -7,7 +7,12 @@
  * @returns {number}
  */
 function sum(a, b) {
-  // TODO: Escribe tu solución aquí
+  const suma = Number(a) + Number(b);
+  if (isNaN(suma)) {
+    return 0;
+  } else {
+    return suma;
+  }
 }
 
 // Pruebas para sum
@@ -27,7 +32,7 @@ console.log("\n------------------------\n");
  * @returns {string}
  */
 function numberToString(num) {
-  // TODO: Escribe tu solución aquí
+  return num.toString();
 }
 
 // Pruebas para numberToString
