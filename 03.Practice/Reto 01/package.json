@@ -1,0 +1,13 @@
+{
+  "name": "reto-01",
+  "version": "1.0.0",
+  "description": "Esta semana comenzamos con los fundamentos del backend en Node.js. Aquí tienes dos ejercicios prácticos inspirados en problemas de Codewars para reforzar conceptos básicos de funciones, tipos de datos y operaciones.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

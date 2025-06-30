@@ -1,9 +1,8 @@
 {
-  "name": "semana2",
+  "name": "reto-02",
   "version": "1.0.0",
-  "description": "",
+  "description": "Crea una aplicación de consola en Node.js para determinar si un número es primo. Practicarás:",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.4.1",
-    "figlet": "^1.8.1",
     "inquirer": "^12.6.3"
   }
 }
