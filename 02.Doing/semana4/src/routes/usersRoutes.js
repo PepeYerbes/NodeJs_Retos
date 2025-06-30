@@ -1,4 +1,4 @@
-import { getUsers, addUser } from '../controllers/userController.js';
+import { getUsers, addUser } from '../controllers/usersController.js';
 
 export function usersRouter(req, res) {
   if (req.pathname === '/users' && req.method === 'GET') {
@@ -7,5 +7,5 @@ export function usersRouter(req, res) {
   if (req.pathname === '/users' && req.method === 'POST') {
     return addUser(req, res);
   }
-  return false
+  return false;
 }
