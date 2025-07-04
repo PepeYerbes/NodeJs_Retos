@@ -1,5 +1,5 @@
 import express from 'express';
-import taskRoutes from './src/routes/taskRoutes.js';
+import routes from './src/routes/index.js';
 import { logger } from './src/middleware/logger.js';
 
 const PORT = 3000;
