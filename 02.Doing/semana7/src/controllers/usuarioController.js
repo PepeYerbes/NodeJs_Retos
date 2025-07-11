@@ -14,11 +14,35 @@ async function obtenerUsuario(req, res) {
 
 async function obtenerUsuarios(req, res) {
   try {
-    const users = await Usuario.find().sort({ nombreCompleto: 1 });
+    const users = await Usuario.find()
+      .populate({
+        path: 'municipioId',
+        select: 'nombre estadoId',
+        populate: {
+          path: 'estadoId',
+          select: 'nombre'
+        }
+      })
+      .sort({ nombreCompleto: 1 });
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
   }
+}
+
+async function obtenerUsuariosMunicipio(req, res) {
+  const municipioId = req.params.id;
+  const users = await Usuario.find({ municipioId })
+    .populate({
+      path: 'municipioId',
+      select: 'nombre estadoId',
+      populate: {
+        path: 'estadoId',
+        select: 'nombre'
+      }
+    })
+    .sort({ nombreCompleto: 1 });
+  res.json(users);
 }
 
 async function crearUsuario(req, res) {
@@ -70,5 +94,6 @@ module.exports = {
   crearUsuario,
   eliminarUsuario,
   obtenerUsuario,
-  obtenerUsuarios
+  obtenerUsuarios,
+  obtenerUsuariosMunicipio
 }
