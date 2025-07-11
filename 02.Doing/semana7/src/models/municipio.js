@@ -4,8 +4,7 @@ const MunicipioSchema = new mongoose.Schema({
   nombre: {
     type: String,
     maxLength: 250,
-    required: true,
-    unique: true
+    required: true
   },
   estadoId: {
     type: mongoose.Schema.Types.ObjectId,

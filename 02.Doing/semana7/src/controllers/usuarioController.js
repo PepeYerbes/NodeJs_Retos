@@ -14,7 +14,7 @@ async function obtenerUsuario(req, res) {
 
 async function obtenerUsuarios(req, res) {
   try {
-    const users = await Usuario.find().sort({ nombreCompleto });
+    const users = await Usuario.find().sort({ nombreCompleto: 1 });
     res.json(users);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });
