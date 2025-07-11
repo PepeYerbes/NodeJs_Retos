@@ -4,7 +4,7 @@ const { obternerUsuario,
     obternerUsuarios,
     crearUsuario,
     actualizarUsuario,
-    eliminarUsuario } = require('../Controllers/usuarioController.js');
+    eliminarUsuario } = require('./controllers/usuarioController.js');
 
 // Rutas para el manejo de usuarios
 router.get('/usuarios', obternerUsuarios); // Obtener todos los usuarios    
