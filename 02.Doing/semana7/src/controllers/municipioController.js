@@ -1,16 +1,39 @@
 const Municipio = require('../models/municipio');
 
 async function obtenerMunicipios(req, res) {
-  const municipios = await Municipio.find().sort({ nombre: 1 });
+  const municipios = await Municipio.find()
+    .populate({
+      path: 'estadoId',
+      select: 'nombre'
+    })
+    .sort({ nombre: 1 });
   res.json(municipios);
 }
 
 async function obtenerMunicipio(req, res) {
-  const municipio = await Municipio.findById(req.params.id);
+  const municipio = await Municipio
+    .findById(req.params.id)
+    .populate({
+      path: 'estadoId',
+      select: 'nombre'
+    });
   if (!municipio) {
     return res.status(400).json({ error: 'Municipio no encontrado' });
   }
   res.json(municipio);
+}
+
+async function obtenerMuniciposEstado(req, res) {
+  const estadoId = req.params.id;
+
+  const municipios = await Municipio.find({ estadoId })
+    .populate({
+      path: 'estadoId',
+      select: 'nombre'
+    })
+    .sort({ nombre: 1 });
+  const total = municipios.length;
+  res.json({ total, municipios });
 }
 
 async function crearMunicipio(req, res) {
@@ -66,5 +89,6 @@ module.exports = {
   crearMunicipio,
   eliminarMunicipio,
   obtenerMunicipio,
-  obtenerMunicipios
+  obtenerMunicipios,
+  obtenerMuniciposEstado
 }
