@@ -1,15 +1,42 @@
 import Product from '../models/product.js';
 
 async function getProducts(req, res) {
-  try { } catch (error) {
+  try {
+    const products = await Product.find().populate('category').sort({ name: 1 });
+    res.json(products);
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
 async function getProductById(req, res) {
-  try { } catch (error) {
+  try {
+    const id = req.params.id;
+    const product = await Product.findById(id).populate('category');
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    res.json(product);
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
+
+async function getProductByCategory(req, res) {
+  try {
+    const id = req.params.idCategory;
+    const products = await Product
+      .find({ category: id })
+      .populate('category')
+      .sort({ name: 1 });
+    if (products.length === 0) {
+      return res.status(404).json({ message: 'No products found on this category' });
+    }
+    res.json(products);
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+}
+
 async function createProduct(req, res) {
   try { } catch (error) {
     res.status(500).send({ error });
@@ -29,6 +56,7 @@ async function deleteProduct(req, res) {
 export {
   getProducts,
   getProductById,
+  getProductByCategory,
   createProduct,
   updateProduct,
   deleteProduct,
