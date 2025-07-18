@@ -54,7 +54,14 @@ async function updateCategory(req, res) {
   }
 }
 async function deleteCategory(req, res) {
-  try { } catch (error) {
+  try {
+    const idCategory = req.params.id;
+    const deletedCategory = await Category.findByIdAndDelete(idCategory);
+    if (!deletedCategory) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+    res.status(204).send();
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
