@@ -38,7 +38,16 @@ async function getProductByCategory(req, res) {
 }
 
 async function createProduct(req, res) {
-  try { } catch (error) {
+  try {
+    const { name, description, price, stock, imagesUrl, category } = req.body;
+
+    if (!name || !description || !price || !stock || !imagesUrl || !category) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    const newProduct = await Product.create({ name, description, price, stock, imagesUrl, category });
+    res.status(201).json(newProduct);
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
