@@ -74,7 +74,14 @@ async function updateProduct(req, res) {
   }
 }
 async function deleteProduct(req, res) {
-  try { } catch (error) {
+  try {
+    const id = req.params.id;
+    const deletedProduct = await Product.findByIdAndDelete(id);
+    if (!deletedProduct) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    res.status(204).send();
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
