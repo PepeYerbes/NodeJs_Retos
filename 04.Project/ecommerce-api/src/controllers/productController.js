@@ -52,7 +52,24 @@ async function createProduct(req, res) {
   }
 }
 async function updateProduct(req, res) {
-  try { } catch (error) {
+  try {
+    const id = req.params.id;
+    const { name, description, price, stock, imagesUrl, category } = req.body;
+
+    if (!name || !description || !price || !stock || !imagesUrl || !category) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    const updatedProduct = await Product.findByIdAndUpdate(id,
+      { name, description, price, stock, imagesUrl, category },
+      { new: true },
+    );
+
+    if (!updatedProduct) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    res.status(200).json(updatedProduct);
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
