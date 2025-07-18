@@ -35,7 +35,21 @@ async function createCategory(req, res) {
   }
 }
 async function updateCategory(req, res) {
-  try { } catch (error) {
+  try {
+    const { name, description, parentCategory, imageURL } = req.body;
+    const idCategory = req.params.id;
+
+    const updatedCategory = await Category.findByIdAndUpdate(
+      idCategory,
+      { name, description, parentCategory, imageURL },
+      { new: true }
+    );
+
+    if (!updatedCategory) {
+      return res.status(404).json({ message: "Category not found" });
+    }
+    res.status(200).json(updatedCategory);
+  } catch (error) {
     res.status(500).send({ error });
   }
 }
