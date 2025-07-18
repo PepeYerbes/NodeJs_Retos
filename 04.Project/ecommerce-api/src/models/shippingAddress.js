@@ -57,4 +57,4 @@ const shippingAddressSchema = new mongoose.Schema({
 
 const ShippingAddress = mongoose.model('ShippingAddress', shippingAddressSchema);
 
-module.exports = ShippingAddress;
+export default ShippingAddress;
