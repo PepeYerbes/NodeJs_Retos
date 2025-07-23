@@ -17,6 +17,9 @@ VALUES
 ('Tepezalá' , (@estadoID));
 
 
-SELECT e.id as IdEstado, e.nombre as Estado, m.id as IdMunicipio, m.nombre as Municipio
+SELECT e.id as IdEstado, e.nombre as Estado,
+m.id as IdMunicipio,
+m.nombre as Municipio
 FROM estados e INNER JOIN
-	municipios m ON e.id=m.estado_id;
+	municipios m ON e.id=m.estado_id
+WHERE m.nombre LIKE '%as%';
