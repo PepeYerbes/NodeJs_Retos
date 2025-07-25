@@ -31,9 +31,9 @@ import storage, { saveData } from '../storage.js';
  * Respuesta exitosa (200):
  * [
  *   {
- *     "id": 1,
- *     "name": "Laptop Gaming",
- *     "price": 1299.99,
+ *     'id': 1,
+ *     'name': 'Laptop Gaming',
+ *     'price': 1299.99,
  *   }
  * ]
  *
@@ -61,16 +61,16 @@ export function getProducts(req, res) {
  *
  * Estructura esperada en req.body:
  * {
- *   "name": "Mouse Gamer",
- *   "price": 79.99,
+ *   'name': 'Mouse Gamer',
+ *   'price': 79.99,
  * }
  *
  * @returns {Object} JSON con mensaje de confirmación y datos del producto creado
  *
  * Respuesta exitosa (200):
  * {
- *   "id": 2,
- *   "name": "Mouse Gamer",
+ *   'id': 2,
+ *   'name': 'Mouse Gamer',
  * }
  *
  * @throws {Error} Error de servidor si falla la persistencia en archivo
@@ -100,6 +100,6 @@ export async function addProduct(req, res) {
   await saveData('products');
 
   // Retorna respuesta de confirmación con los datos del producto creado
-  // Nota: Hay un error en el nombre de la propiedad, debería ser "producto" no "usuario"
+  // Nota: Hay un error en el nombre de la propiedad, debería ser 'producto' no 'usuario'
   res.json({ message: 'Producto creado', usuario: product });
 }

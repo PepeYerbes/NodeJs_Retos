@@ -35,15 +35,15 @@ const router = express.Router();
  * @param {string} isAdmin - Indica si el usuario tiene privilegios de administrador ('true' o cualquier otro valor)
  *
  * Ejemplo de uso:
- * GET /rodrigo → "HOLA rodrigo" (usuario normal)
- * GET /rodrigo?isAdmin=true → "Hola rodrigo eres admin" (administrador)
- * GET /maria?isAdmin=false → "HOLA maria" (usuario normal)
+ * GET /rodrigo → 'HOLA rodrigo' (usuario normal)
+ * GET /rodrigo?isAdmin=true → 'Hola rodrigo eres admin' (administrador)
+ * GET /maria?isAdmin=false → 'HOLA maria' (usuario normal)
  *
  * Respuesta de administrador (200):
- * "Hola rodrigo eres admin"
+ * 'Hola rodrigo eres admin'
  *
  * Respuesta de usuario normal (200):
- * "HOLArodrigo"
+ * 'HOLArodrigo'
  */
 router.get('/:name', logger, (req, res) => {
   // Verifica si el query parameter 'isAdmin' tiene el valor exacto 'true'

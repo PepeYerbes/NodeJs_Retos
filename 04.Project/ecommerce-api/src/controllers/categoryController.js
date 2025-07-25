@@ -12,7 +12,7 @@ async function getCategoryById(req, res) {
   try {
     const category = await Category.findById(req.params.id).populate('parentCategory');
     if (!category) {
-      return res.status(404).json({ message: "Category not found" });
+      return res.status(404).json({ message: 'Category not found' });
     }
     res.status(200).json(category);
   } catch (error) {
@@ -46,7 +46,7 @@ async function updateCategory(req, res) {
     );
 
     if (!updatedCategory) {
-      return res.status(404).json({ message: "Category not found" });
+      return res.status(404).json({ message: 'Category not found' });
     }
     res.status(200).json(updatedCategory);
   } catch (error) {
@@ -58,7 +58,7 @@ async function deleteCategory(req, res) {
     const idCategory = req.params.id;
     const deletedCategory = await Category.findByIdAndDelete(idCategory);
     if (!deletedCategory) {
-      return res.status(404).json({ message: "Category not found" });
+      return res.status(404).json({ message: 'Category not found' });
     }
     res.status(204).send();
   } catch (error) {

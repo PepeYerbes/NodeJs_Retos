@@ -32,8 +32,8 @@ const router = express.Router();
  * Respuesta exitosa (200):
  * {
  *   [
- *     "id": 1,
- *     "name": "Juan Pérez",
+ *     'id': 1,
+ *     'name': 'Juan Pérez',
  *   ],
  * }
  */
@@ -47,13 +47,13 @@ router.get('/users', logger, getUsers);
  *
  * Body esperado:
  * {
- *   "name": "María García",
+ *   'name': 'María García',
  * }
  *
  * Respuesta exitosa (201):
  * {
- *   "id": 2,
- *   "name": "María García",
+ *   'id': 2,
+ *   'name': 'María García',
  * },
  *
  * Errores posibles:

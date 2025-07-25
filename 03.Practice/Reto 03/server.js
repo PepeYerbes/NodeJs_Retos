@@ -67,15 +67,15 @@ function handleInvertir(req, res, query) {
   // Validar que el parámetro texto existe
   if (!texto) {
     return sendJSON(res, 400, {
-      error: "El parámetro 'texto' es requerido",
-      ejemplo: "?texto=hola"
+      error: 'El parámetro 'texto' es requerido',
+      ejemplo: '?texto=hola'
     });
   }
 
   // Validar que no esté vacío
   if (texto.trim() === '') {
     return sendJSON(res, 400, {
-      error: "El texto no puede estar vacío"
+      error: 'El texto no puede estar vacío'
     });
   }
 
@@ -107,14 +107,14 @@ function handlePalindromo(req, res, query) {
 
   if (!texto) {
     return sendJSON(res, 400, {
-      error: "El parámetro 'texto' es requerido",
-      ejemplo: "?texto=oso"
+      error: 'El parámetro 'texto' es requerido',
+      ejemplo: '?texto=oso'
     });
   }
 
   if (texto.trim() === '') {
     return sendJSON(res, 400, {
-      error: "El texto no puede estar vacío"
+      error: 'El texto no puede estar vacío'
     });
   }
 
@@ -124,7 +124,7 @@ function handlePalindromo(req, res, query) {
     sendJSON(res, 200, {
       original: texto,
       palindromo: palindromo,
-      mensaje: palindromo ? "¡Es un palíndromo!" : "No es un palíndromo"
+      mensaje: palindromo ? '¡Es un palíndromo!' : 'No es un palíndromo'
     });
   } catch (error) {
     sendJSON(res, 400, {
@@ -148,7 +148,7 @@ const server = http.createServer((req, res) => {
   // Manejar solo peticiones GET
   if (req.method !== 'GET') {
     return sendJSON(res, 405, {
-      error: "Método no permitido. Solo se acepta GET"
+      error: 'Método no permitido. Solo se acepta GET'
     });
   }
 
@@ -167,22 +167,22 @@ const server = http.createServer((req, res) => {
   // Ruta: GET / (página de inicio con información)
   if (pathname === '/') {
     return sendJSON(res, 200, {
-      mensaje: "🚀 Servidor de Inversión de Cadenas",
+      mensaje: '🚀 Servidor de Inversión de Cadenas',
       rutas: {
-        invertir: "GET /invertir?texto=hola",
-        palindromo: "GET /palindromo?texto=oso"
+        invertir: 'GET /invertir?texto=hola',
+        palindromo: 'GET /palindromo?texto=oso'
       },
       ejemplos: [
-        "http://localhost:3000/invertir?texto=JavaScript",
-        "http://localhost:3000/palindromo?texto=reconocer"
+        'http://localhost:3000/invertir?texto=JavaScript',
+        'http://localhost:3000/palindromo?texto=reconocer'
       ]
     });
   }
 
   // Ruta no encontrada
   sendJSON(res, 404, {
-    error: "Ruta no encontrada",
-    rutasDisponibles: ["/", "/invertir", "/palindromo"]
+    error: 'Ruta no encontrada',
+    rutasDisponibles: ['/', '/invertir', '/palindromo']
   });
 });
 

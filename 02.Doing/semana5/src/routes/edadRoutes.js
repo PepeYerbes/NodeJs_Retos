@@ -32,18 +32,18 @@ const router = express.Router();
  * @param {string} anioNacimiento - Año de nacimiento en formato YYYY (se convierte a número)
  *
  * Ejemplo de uso:
- * GET /api/edad?anioNacimiento=2000 → { "anioNacimiento": 2000, "edad": 25 }
- * GET /api/edad?anioNacimiento=1995 → { "anioNacimiento": 1995, "edad": 30 }
+ * GET /api/edad?anioNacimiento=2000 → { 'anioNacimiento': 2000, 'edad': 25 }
+ * GET /api/edad?anioNacimiento=1995 → { 'anioNacimiento': 1995, 'edad': 30 }
  *
  * Respuesta exitosa (200):
  * {
- *   "anioNacimiento": 2000,
- *   "edad": 25
+ *   'anioNacimiento': 2000,
+ *   'edad': 25
  * }
  *
  * Respuesta de error (400):
  * {
- *   "error": "Año inválido"
+ *   'error': 'Año inválido'
  * }
  */
 router.get('/edad', logger, (req, res) => {

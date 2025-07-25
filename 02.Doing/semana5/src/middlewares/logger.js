@@ -25,8 +25,8 @@
  * @param {Function} next - Función callback para continuar al siguiente middleware o controlador
  *
  * Formato de log generado:
- * "2025-06-26T15:30:45.123Z | GET /api/users"
- * "2025-06-26T15:31:02.456Z | POST /api/products"
+ * '2025-06-26T15:30:45.123Z | GET /api/users'
+ * '2025-06-26T15:31:02.456Z | POST /api/products'
  *
  * @example
  * // Uso en rutas individuales
@@ -48,7 +48,7 @@ export function logger(req, res, next) {
   console.log(`${dateTime.toISOString()} | ${req.method} ${req.url}`);
 
   // Llama a next() para continuar al siguiente middleware o controlador
-  // Sin esta llamada, la petición se quedaría "colgada" y nunca llegaría respuesta
+  // Sin esta llamada, la petición se quedaría 'colgada' y nunca llegaría respuesta
   // Es FUNDAMENTAL en cualquier middleware de Express
   next();
 }

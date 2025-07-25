@@ -31,13 +31,13 @@ const router = express.Router();
  * @param {string} nombre - Nombre de la persona a saludar
  *
  * Ejemplo de uso:
- * GET /saludo/Rodrigo → "Hola Rodrigo!"
- * GET /saludo/María → "Hola María!"
- * GET /saludo/Juan%20Carlos → "Hola Juan Carlos!" (URL encoded)
+ * GET /saludo/Rodrigo → 'Hola Rodrigo!'
+ * GET /saludo/María → 'Hola María!'
+ * GET /saludo/Juan%20Carlos → 'Hola Juan Carlos!' (URL encoded)
  *
  * Respuesta exitosa (200):
  * {
- *   "mensaje": "Hola Rodrigo!"
+ *   'mensaje': 'Hola Rodrigo!'
  * }
  */
 router.get('/saludo/:nombre', logger, (req, res) => {

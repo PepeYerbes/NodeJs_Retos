@@ -11,8 +11,8 @@ dbConnection();
 app.use(express.json());
 app.use(logger);
 
-app.get("/", (req, res) => {
-  res.send("WELCOME!");
+app.get('/', (req, res) => {
+  res.send('WELCOME!');
 });
 
 app.use('/api', routes);

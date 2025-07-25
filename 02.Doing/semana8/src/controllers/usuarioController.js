@@ -1,6 +1,6 @@
-import { Usuario } from "../models/usuario.js";
-import { Municipio } from "../models/municipio.js";
-import { Estado } from "../models/estado.js";
+import { Usuario } from '../models/usuario.js';
+import { Municipio } from '../models/municipio.js';
+import { Estado } from '../models/estado.js';
 
 async function obtenerUsuarios(req, res) {
   try {

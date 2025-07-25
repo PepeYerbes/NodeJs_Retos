@@ -66,7 +66,7 @@ export function parseQuery(req, res, next) {
   req.pathname = url.pathname;
 
   // Llama a next() para continuar al siguiente middleware o controlador
-  // Sin esta llamada, la petición se quedaría "colgada"
+  // Sin esta llamada, la petición se quedaría 'colgada'
   // Es fundamental en el patrón de middleware
   next();
 }
