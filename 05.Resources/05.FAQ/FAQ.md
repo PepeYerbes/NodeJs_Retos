@@ -600,7 +600,7 @@ cat package.json       # Dependencias del proyecto
 
 ### Canales de soporte actualizados:
 
-- 💬 **Discord**: [Inadaptados Community](https://discord.gg/5EqsTkGcgm)
+- 💬 **Discord**: [Inadaptados Community](https://discord.com/channels/1326233159670698064/1326236998133874808)
 - 📖 **GitHub Issues**: Para bugs del material del curso
 - 🤝 **Peer Support**: Canal #nodejs-2025 en Discord
 - 📧 **Email**: Para consultas académicas

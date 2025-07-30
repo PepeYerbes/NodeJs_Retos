@@ -84,15 +84,65 @@ mi-proyecto-curso/
 
 ## 📞 ¿Necesitas Ayuda?
 
-| Tipo de Problema     | Solución                                                       |
-| -------------------- | -------------------------------------------------------------- |
-| 🐛 **Error técnico** | [Troubleshooting Guide](Troubleshooting-Setup.md)              |
-| ❓ **Duda general**  | [Discord - #ayuda-curso-nodejs](https://discord.gg/5EqsTkGcgm) |
-| 📚 **Documentación** | [GitHub Issues](https://github.com/inadaptados/curso-nodejs)   |
+| Tipo de Problema     | Solución                                                                                              |
+| -------------------- | ----------------------------------------------------------------------------------------------------- |
+| 🐛 **Error técnico** | [Troubleshooting Guide](Troubleshooting-Setup.md)                                                     |
+| ❓ **Duda general**  | [Discord - #ayuda-curso-nodejs](https://discord.com/channels/1326233159670698064/1326236998133874808) |
+| 📚 **Documentación** | [GitHub Issues](https://github.com/inadaptados/curso-nodejs)                                          |
 
 ---
 
-_📅 Actualizado: Julio 2025 | 🎯 Node.js v22.16.0 | ⚡ Express v5.1.0_# 📋 Requisitos del Sistema - Curso NodeJS
+_📅 Actualizado: Julio 2025 | 🎯 Node.js v22.16.0 | ⚡ Express v5.1.0_# 🛠️ Guía de Configuración - Curso NodeJS
+
+> **🚀 Navegación Rápida**: [Requisitos](#-requisitos-del-sistema) | [Instalación](#-instalación-paso-a-paso) | [Verificación](#-verificación-completa) | [Problemas](#-solución-de-problemas-específicos-del-curso)
+
+## 📖 Índice de Contenidos
+
+- [📋 Requisitos del Sistema](#-requisitos-del-sistema)
+  - [💻 Sistemas Operativos](#sistemas-operativos-compatibles)
+  - [⚙️ Especificaciones](#especificaciones-mínimas)
+  - [📦 Software Base](#software-base-requerido)
+- [🚀 Instalación Paso a Paso](#-instalación-paso-a-paso)
+  - [1️⃣ Node.js y npm](#1-nodejs-y-npm)
+  - [2️⃣ VS Code](#2-editor-de-código---vs-code)
+  - [3️⃣ MongoDB](#3-mongodb-para-proyectos-con-mongodb)
+  - [4️⃣ MySQL](#4-mysql-para-proyectos-con-mysql)
+  - [5️⃣ Git](#5-git-control-de-versiones)
+- [✅ Verificación](#-verificación-completa)
+- [🚨 Problemas Comunes](#-solución-de-problemas-específicos-del-curso)
+- [📞 Soporte](#-soporte-del-curso)
+
+---
+
+## 📋 Requisitos del Sistema
+
+### 💻 Sistemas Operativos Compatibles
+
+| SO                 | Versión Mínima | Recomendada           | Estado |
+| ------------------ | -------------- | --------------------- | ------ |
+| 🪟 **Windows**     | 10 (64-bit)    | **Windows 11 22H2+**  | ✅     |
+| 🍎 **macOS**       | 10.15 Catalina | **macOS 14 Sonoma+**  | ✅     |
+| 🐧 **Ubuntu**      | 18.04 LTS      | **Ubuntu 22.04 LTS+** | ✅     |
+| 📦 **Debian**      | 10 Buster      | **Debian 12+**        | ✅     |
+| 🎩 **RHEL/CentOS** | 8              | **Rocky Linux 9+**    | ✅     |
+
+> **⚡ Mejor Experiencia**: Usar la **última versión** de tu SO garantiza:
+>
+> - 🚀 Mejor rendimiento y estabilidad
+> - 🔒 Parches de seguridad actualizados
+> - 🛠️ Compatibilidad completa con herramientas del curso
+> - 📱 Soporte para las últimas funcionalidades
+
+### ⚙️ Especificaciones Mínimas
+
+| Componente            | Mínimo            | Recomendado       | Óptimo         |
+| --------------------- | ----------------- | ----------------- | -------------- |
+| 💾 **RAM**            | 4 GB              | 8 GB              | 16 GB          |
+| 💿 **Almacenamiento** | 2 GB libre        | 5 GB libre        | 10 GB SSD      |
+| ⚡ **Procesador**     | Dual-core 2.0 GHz | Quad-core 2.5 GHz | 8-core 3.0 GHz |
+| 🌐 **Internet**       | Banda ancha       | Fibra óptica      | -              |
+
+// ...resto del contenido existente...# 📋 Requisitos del Sistema - Curso NodeJS
 
 ## 🖥️ Sistemas Operativos Compatibles
 

@@ -84,11 +84,11 @@ mi-proyecto-curso/
 
 ## 📞 ¿Necesitas Ayuda?
 
-| Tipo de Problema     | Solución                                                       |
-| -------------------- | -------------------------------------------------------------- |
-| 🐛 **Error técnico** | [Troubleshooting Guide](Troubleshooting-Setup.md)              |
-| ❓ **Duda general**  | [Discord - #ayuda-curso-nodejs](https://discord.gg/5EqsTkGcgm) |
-| 📚 **Documentación** | [GitHub Issues](https://github.com/inadaptados/curso-nodejs)   |
+| Tipo de Problema     | Solución                                                                                              |
+| -------------------- | ----------------------------------------------------------------------------------------------------- |
+| 🐛 **Error técnico** | [Troubleshooting Guide](Troubleshooting-Setup.md)                                                     |
+| ❓ **Duda general**  | [Discord - #ayuda-curso-nodejs](https://discord.com/channels/1326233159670698064/1326236998133874808) |
+| 📚 **Documentación** | [GitHub Issues](https://github.com/inadaptados/curso-nodejs)                                          |
 
 ---
 

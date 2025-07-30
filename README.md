@@ -91,4 +91,4 @@ Equipo de Inadaptados - [GitHub](https://github.com/Inadaptados/2025-2-A-Node)
 
 ## Contacto
 
-¿Tienes preguntas o necesitas ayuda? Contáctanos a través de nuestro [Discord](https://discord.gg/5EqsTkGcgm)
+¿Tienes preguntas o necesitas ayuda? Contáctanos a través de nuestro [Discord](https://discord.com/channels/1326233159670698064/1326236998133874808)

@@ -224,11 +224,11 @@ git config --global init.defaultBranch main
 
 ### 🚨 **Para Emergencias (Curso en Vivo)**
 
-- **Discord**: [#ayuda-urgente](https://discord.gg/5EqsTkGcgm)
+- **Discord**: [#ayuda-urgente](https://discord.com/channels/1326233159670698064/1326236998133874808)
 
 ### 💬 **Ayuda Comunitaria**
 
-- **Discord**: [#ayuda-curso-nodejs](https://discord.gg/5EqsTkGcgm)
+- **Discord**: [#ayuda-curso-nodejs](https://discord.com/channels/1326233159670698064/1326236998133874808)
 - **GitHub**: [Issues del repositorio](https://github.com/inadaptados/curso-nodejs)
 
 ### 📧 **Incluye en tu Consulta**

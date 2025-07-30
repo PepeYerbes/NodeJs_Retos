@@ -465,7 +465,7 @@ mi-proyecto-node/
 
 ### Canales de Soporte
 
-- 💬 **Discord**: [Inadaptados Server](https://discord.gg/5EqsTkGcgm)
+- 💬 **Discord**: [Inadaptados Server](https://discord.com/channels/1326233159670698064/1326236998133874808)
 - 📚 **GitHub**: Issues en este repositorio
 - 🤝 **Peer Support**: Canal #ayuda-curso-nodejs
 

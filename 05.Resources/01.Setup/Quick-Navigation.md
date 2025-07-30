@@ -39,4 +39,4 @@ npm cache clean --force
 - [📋 Requisitos](System-Requirements.md)
 - [🛠️ Setup Completo](Setup-Guide.md)
 - [🚨 Problemas](Troubleshooting-Setup.md)
-- [💬 Discord](https://discord.gg/5EqsTkGcgm)
+- [💬 Discord](https://discord.com/channels/1326233159670698064/1326236998133874808)
