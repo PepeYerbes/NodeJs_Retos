@@ -39,11 +39,11 @@ async function register(req, res) {
     await newUser.save();
     res.status(201).json({ displayName, email, phone });
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
-async function login(req, res) {
+async function login(req, res, next) {
   try {
     const { email, password } = req.body;
     const userExist = await checkUserExist(email);
@@ -57,7 +57,7 @@ async function login(req, res) {
     const token = generateToken(userExist._id, userExist.displayName, userExist.role);
     res.status(200).json({ token });
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 

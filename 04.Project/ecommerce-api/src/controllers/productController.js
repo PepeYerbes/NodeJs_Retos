@@ -6,7 +6,7 @@ async function getProducts(req, res) {
     const products = await Product.find().populate('category').sort({ name: 1 });
     res.json(products);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 async function getProductById(req, res) {
@@ -18,7 +18,7 @@ async function getProductById(req, res) {
     }
     res.json(product);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -49,7 +49,7 @@ async function createProduct(req, res) {
     const newProduct = await Product.create({ name, description, price, stock, imagesUrl, category });
     res.status(201).json(newProduct);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 async function updateProduct(req, res) {
@@ -71,7 +71,7 @@ async function updateProduct(req, res) {
     }
     res.status(200).json(updatedProduct);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 async function deleteProduct(req, res) {
@@ -83,7 +83,7 @@ async function deleteProduct(req, res) {
     }
     res.status(204).send();
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 

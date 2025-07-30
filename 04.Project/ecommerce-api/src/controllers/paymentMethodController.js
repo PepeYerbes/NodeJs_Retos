@@ -6,7 +6,7 @@ async function getPaymentMethods(req, res) {
     const paymentMethods = await PaymentMethod.find({ isActive: true }).populate('user');
     res.json(paymentMethods);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -19,7 +19,7 @@ async function getPaymentMethodById(req, res) {
     }
     res.json(paymentMethod);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -36,7 +36,7 @@ async function getPaymentMethodsByUser(req, res) {
     }
     res.json(paymentMethods);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -117,7 +117,7 @@ async function createPaymentMethod(req, res) {
     await newPaymentMethod.populate('user');
     res.status(201).json(newPaymentMethod);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -168,7 +168,7 @@ async function updatePaymentMethod(req, res) {
 
     res.status(200).json(updatedPaymentMethod);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -200,7 +200,7 @@ async function setDefaultPaymentMethod(req, res) {
 
     res.status(200).json(updatedPaymentMethod);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -221,7 +221,7 @@ async function deactivatePaymentMethod(req, res) {
 
     res.status(200).json(updatedPaymentMethod);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -255,7 +255,7 @@ async function getDefaultPaymentMethod(req, res) {
 
     res.json(defaultPaymentMethod);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 

@@ -6,7 +6,7 @@ async function getCarts(req, res) {
     const carts = await Cart.find().populate('user').populate('products.product');
     res.json(carts);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -19,7 +19,7 @@ async function getCartById(req, res) {
     }
     res.json(cart);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -32,7 +32,7 @@ async function getCartByUser(req, res) {
     }
     res.json(cart);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -60,7 +60,7 @@ async function createCart(req, res) {
 
     res.status(201).json(newCart);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -90,7 +90,7 @@ async function updateCart(req, res) {
       return res.status(404).json({ message: 'Cart not found' });
     }
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
@@ -147,7 +147,7 @@ async function addProductToCart(req, res) {
 
     res.status(200).json(cart);
   } catch (error) {
-    errorHandler(error, req, res);
+    next(error);
   }
 }
 
