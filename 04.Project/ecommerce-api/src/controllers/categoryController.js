@@ -1,11 +1,12 @@
 import Category from '../models/category.js';
+import errorHandler from '../middlewares/errorHandler.js';
 
 async function getCategories(req, res) {
   try {
     const categories = await Category.find().populate('parentCategory').sort({ name: 1 });
     res.status(200).json(categories);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function getCategoryById(req, res) {
@@ -16,7 +17,7 @@ async function getCategoryById(req, res) {
     }
     res.status(200).json(category);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function createCategory(req, res) {
@@ -31,7 +32,7 @@ async function createCategory(req, res) {
     await newCategory.save();
     res.status(201).json(newCategory);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function updateCategory(req, res) {
@@ -50,7 +51,7 @@ async function updateCategory(req, res) {
     }
     res.status(200).json(updatedCategory);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function deleteCategory(req, res) {
@@ -62,7 +63,7 @@ async function deleteCategory(req, res) {
     }
     res.status(204).send();
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 

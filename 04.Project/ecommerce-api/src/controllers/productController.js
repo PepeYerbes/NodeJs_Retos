@@ -1,11 +1,12 @@
 import Product from '../models/product.js';
+import errorHandler from '../middlewares/errorHandler.js';
 
 async function getProducts(req, res) {
   try {
     const products = await Product.find().populate('category').sort({ name: 1 });
     res.json(products);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function getProductById(req, res) {
@@ -17,7 +18,7 @@ async function getProductById(req, res) {
     }
     res.json(product);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 
@@ -48,7 +49,7 @@ async function createProduct(req, res) {
     const newProduct = await Product.create({ name, description, price, stock, imagesUrl, category });
     res.status(201).json(newProduct);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function updateProduct(req, res) {
@@ -70,7 +71,7 @@ async function updateProduct(req, res) {
     }
     res.status(200).json(updatedProduct);
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 async function deleteProduct(req, res) {
@@ -82,7 +83,7 @@ async function deleteProduct(req, res) {
     }
     res.status(204).send();
   } catch (error) {
-    res.status(500).send({ error });
+    errorHandler(error, req, res);
   }
 }
 
