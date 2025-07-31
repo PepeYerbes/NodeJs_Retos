@@ -2,11 +2,51 @@
 
 > **Centro de aprendizaje completo para dominar Node.js, Express, y desarrollo backend moderno**
 
-[![Node.js](https://img.shields.io/badge/Node.js-v22.16.0-green.svg)](https://nodejs.org/)
-[![Express](https://img.shields.io/badge/Express-v5.1.0-blue.svg)](https://expressjs.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-v7.0+-green.svg)](https://mongodb.com/)
-[![MySQL](https://img.shields.io/badge/MySQL-v8.0+-orange.svg)](https://mysql.com/)
+## 🏷️ Stack Tecnológico
 
+<div align="center">
+
+### Core Technologies
+
+[![Node.js](https://img.shields.io/badge/Node.js-v22.16.0-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-v5.1.0-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+### Databases
+
+[![MongoDB](https://img.shields.io/badge/MongoDB-v7.0+-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
+[![MySQL](https://img.shields.io/badge/MySQL-v8.0+-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com/)
+
+### Tools & Testing
+
+[![Postman](https://img.shields.io/badge/Postman-Testing-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://postman.com/)
+[![Jest](https://img.shields.io/badge/Jest-Testing-C21325?style=for-the-badge&logo=jest&logoColor=white)](https://jestjs.io/)
+[![Nodemon](https://img.shields.io/badge/Nodemon-Dev-76D04B?style=for-the-badge&logo=nodemon&logoColor=white)](https://nodemon.io/)
+
+### Deployment
+
+[![Heroku](https://img.shields.io/badge/Heroku-Deploy-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://heroku.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deploy-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
+[![Railway](https://img.shields.io/badge/Railway-Deploy-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
+
+</div>
+
+---
+
+## 📊 Estado del Proyecto
+
+<div align="center">
+
+[![Curso](https://img.shields.io/badge/Curso-Activo-success?style=flat-square)](https://github.com/Inadaptados/2025-2-A-Node)
+[![Documentación](https://img.shields.io/badge/Docs-100%25_Completa-blue?style=flat-square)](05.Resources/README.md)
+[![Estudiantes](https://img.shields.io/badge/Estudiantes-50+-orange?style=flat-square)](https://discord.com/channels/1326233159670698064/1326236998133874808)
+[![Última Actualización](https://img.shields.io/badge/Última_Actualización-Enero_2025-brightgreen?style=flat-square)](https://github.com/Inadaptados/2025-2-A-Node/commits/main)
+
+[![Licencia](https://img.shields.io/badge/Licencia-MIT-blue?style=flat-square)](LICENSE)
+[![Discord](https://img.shields.io/badge/Discord-Únete-7289da?style=flat-square&logo=discord&logoColor=white)](https://discord.com/channels/1326233159670698064/1326236998133874808)
+[![GitHub](https://img.shields.io/badge/GitHub-Síguenos-black?style=flat-square&logo=github)](https://github.com/Inadaptados/2025-2-A-Node)
+
+</div>
 ## 📋 Descripción del Curso
 
 Este repositorio contiene el material completo del **Curso de NodeJS 2025**, diseñado para enseñar desde conceptos fundamentales hasta técnicas avanzadas de desarrollo backend. Incluye prácticas guiadas, ejercicios presenciales, retos desafiantes y un proyecto completo de ecommerce.
