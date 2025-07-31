@@ -9,11 +9,11 @@
  * @returns {string} La cadena invertida
  *
  * @example
- * invertirCadena('hola');     // 'aloh'
- * invertirCadena('Node.js');  // 'sj.edoN'
- * invertirCadena('12345');    // '54321'
- * invertirCadena('');         // ''
- * invertirCadena('a');        // 'a'
+ * invertirCadena("hola");     // "aloh"
+ * invertirCadena("Node.js");  // "sj.edoN"
+ * invertirCadena("12345");    // "54321"
+ * invertirCadena("");         // ""
+ * invertirCadena("a");        // "a"
  */
 export function invertirCadena(texto) {
   // Validación: verificar que el parámetro sea una cadena
