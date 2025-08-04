@@ -24,6 +24,13 @@ app.get('/', (req, res) => {
 
 app.use('/api', routes);
 
+app.use((req, res) => {
+  res.status(404).json({
+    error: 'Route not found',
+    method: req.method,
+    url: req.originalUrl,
+  });
+});
 // El errorHandler debe ir AL FINAL, después de todas las rutas
 app.use(errorHandler);
 
