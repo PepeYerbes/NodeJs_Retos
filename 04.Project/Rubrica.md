@@ -1,7 +1,6 @@
 # ✅ Rúbrica de Revisión – Proyecto Integrador: API E-commerce con Express.js
 
 Este documento será usado durante la revisión en vivo del proyecto final.
-**Marca con una palomita (✅), tache (❌) o advertencia (⚠️)** según el cumplimiento de cada punto.
 
 ---
 
@@ -82,11 +81,23 @@ Este documento será usado durante la revisión en vivo del proyecto final.
 
 - Recuerda usar variables de entorno (`.env`) para claves sensibles.
 - Puedes agregar Swagger u OpenAPI para documentar tu API.
-- No es necesario implementar frontend, pero puedes mostrarlo si ayuda a explicar el flujo.
+- No es necesario implementar frontend.
 
 ---
 
-**📊 Puntuación Final**: **\_** / 100 puntos
-**🎯 Estado**: ⭐ Excelente | ✅ Aprobado | ⚠️ Requiere ajustes | ❌ No aprobado
-**📅 Fecha de revisión**: \***\*\_\_\_\*\***
-**👨‍🏫 Revisor**: \***\*\_\_\_\*\***
+**📊 Puntuación Final**: **\_** / 24 puntos
+**🎯 Estado** :
+
+- ⭐ Excelente | 24 puntos |
+- 👍 Muy bueno | 20-23 puntos |
+- ✅ Aprobado | 16-19 puntos |
+- ⚠️ Requiere ajustes | 12-15 puntos |
+- ❌ No aprobado | 0-11 puntos |
+
+- **📅 Fecha de inicio de revisiones**: \***\*\11\08\2025\*\***
+- **📅 Fecha máxima de revisión**: \***\*\22\08\2025\*\***
+- **📅 Fecha límite para completar tu proyecto Máximo puntaje 20**: \***\*\29\08\2025\*\***
+
+** Recuerda que la revisión es una oportunidad para mejorar tu proyecto y recibir retroalimentación constructiva. ¡Buena suerte! **
+
+** Recuerda que debes de terminar tu proyecto para poder iniciar con el último módulo del curso **
