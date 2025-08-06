@@ -10,7 +10,8 @@ import {
   updateUser,
   deactivateUser,
   toggleUserStatus,
-  deleteUser
+  deleteUser,
+  searchUser
 } from '../controllers/userController.js';
 import authMiddleware from '../middlewares/auth.js'; // Middleware de autenticación
 import isAdmin from '../middlewares/isAdminMiddleware.js'; // Middleware de admin
@@ -62,6 +63,7 @@ router.get('/', [
     .isBoolean().withMessage('isActive must be a boolean value')
 ], validate, authMiddleware, isAdmin, getAllUsers);
 
+router.get('/search', searchUser);
 // Obtener usuario por ID (solo admin)
 router.get('/:userId', [
   param('userId')

@@ -341,4 +341,5 @@ export {
   deactivateUser,
   toggleUserStatus,
   deleteUser,
+  searchUser
 };

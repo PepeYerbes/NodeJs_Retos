@@ -1,9 +1,11 @@
-import Category from '../models/category.js';
-import errorHandler from '../middlewares/errorHandler.js';
+import Category from "../models/category.js";
+import errorHandler from "../middlewares/errorHandler.js";
 
 async function getCategories(req, res) {
   try {
-    const categories = await Category.find().populate('parentCategory').sort({ name: 1 });
+    const categories = await Category.find()
+      .populate("parentCategory")
+      .sort({ name: 1 });
     res.status(200).json(categories);
   } catch (error) {
     next(error);
@@ -11,9 +13,11 @@ async function getCategories(req, res) {
 }
 async function getCategoryById(req, res) {
   try {
-    const category = await Category.findById(req.params.id).populate('parentCategory');
+    const category = await Category.findById(req.params.id).populate(
+      "parentCategory"
+    );
     if (!category) {
-      return res.status(404).json({ message: 'Category not found' });
+      return res.status(404).json({ message: "Category not found" });
     }
     res.status(200).json(category);
   } catch (error) {
@@ -47,7 +51,7 @@ async function updateCategory(req, res) {
     );
 
     if (!updatedCategory) {
-      return res.status(404).json({ message: 'Category not found' });
+      return res.status(404).json({ message: "Category not found" });
     }
     res.status(200).json(updatedCategory);
   } catch (error) {
@@ -59,9 +63,61 @@ async function deleteCategory(req, res) {
     const idCategory = req.params.id;
     const deletedCategory = await Category.findByIdAndDelete(idCategory);
     if (!deletedCategory) {
-      return res.status(404).json({ message: 'Category not found' });
+      return res.status(404).json({ message: "Category not found" });
     }
     res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+}
+
+async function searchCategory(req, res, next) {
+  try {
+    const { q, parentCategory, sort, order, page = 1, limit = 10 } = req.query;
+
+    let filters = {};
+
+    if (q) {
+      filters.$or = [
+        { name: { $regex: q, $options: "i" } },
+        { description: { $regex: q, $options: "i" } },
+      ];
+    }
+    if (parentCategory) {
+      filters.parentCategory = parentCategory;
+    }
+    let sortOptions = {};
+    if (sort) {
+      const sortOrder = order === "desc" ? -1 : 1;
+      sortOptions[sort] = sortOrder;
+    } else {
+      sortOptions.name = -1;
+    }
+
+    const skip = (parseInt(page) - 1) * parseInt(limit);
+    const categories = await Category.find(filters)
+      .populate("parentCategory")
+      .sort(sortOptions)
+      .skip(skip)
+      .limit(parseInt(limit));
+
+    const totalResults = await Category.countDocuments(filters);
+    const totalPages = Math.ceil(totalResults / parseInt(limit));
+
+    res.status(200).json({
+      categories,
+      pagination: {
+        currentPage: parseInt(page),
+        totalPages,
+        totalResults,
+        hasNext: parseInt(page) < totalPages,
+        nasPrev: parseInt(page) > 1,
+      },
+      searchTerm: q || null,
+      parentCategory: parentCategory || null,
+      sort: sort|| 'name',
+      order: order || 'desc'
+    });
   } catch (error) {
     next(error);
   }
@@ -73,4 +129,5 @@ export {
   createCategory,
   updateCategory,
   deleteCategory,
-}
+  searchCategory
+};
