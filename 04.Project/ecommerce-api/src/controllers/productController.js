@@ -28,6 +28,7 @@ async function getProducts(req, res, next) {
     next(error);
   }
 }
+
 async function getProductById(req, res, next) {
   try {
     const id = req.params.id;
@@ -71,6 +72,7 @@ async function createProduct(req, res, next) {
     next(error);
   }
 }
+
 async function updateProduct(req, res, next) {
   try {
     const id = req.params.id;
@@ -93,6 +95,7 @@ async function updateProduct(req, res, next) {
     next(error);
   }
 }
+
 async function deleteProduct(req, res, next) {
   try {
     const id = req.params.id;
