@@ -37,12 +37,12 @@ const router = express.Router();
  *
  * Respuesta exitosa (200):
  * {
- *   "resultado": 8
+ *   'resultado': 8
  * }
  *
  * Respuesta de error (400):
  * {
- *   "error": "Parámetros inválidos"
+ *   'error': 'Parámetros inválidos'
  * }
  */
 router.get('/suma/:a/:b', logger, (req, res) => {

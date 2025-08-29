@@ -33,11 +33,11 @@ function mostrarContacto(res) {
 }
 
 /**
- * Muestra la información de "Conócenos".
+ * Muestra la información de 'Conócenos'.
  * @param {ServerResponse} res - Objeto de respuesta HTTP.
  */
 function mostrarConocenos(res) {
-  // Define el contenido HTML de "Conócenos".
+  // Define el contenido HTML de 'Conócenos'.
   const content = `<h2>Conócenos</h2><p>Somos cool</p>`;
   // Responde con el contenido HTML y código 200.
   responderHTML(res, content, 200);

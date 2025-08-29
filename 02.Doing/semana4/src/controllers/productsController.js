@@ -34,9 +34,9 @@ import storage, { saveData } from '../storage.js';
  * Respuesta exitosa (200):
  * [
  *   {
- *     "id": 1,
- *     "name": "Laptop Gaming",
- *     "price": 1299.99,
+ *     'id': 1,
+ *     'name': 'Laptop Gaming',
+ *     'price': 1299.99,
  *   }
  * ]
  *
@@ -73,14 +73,14 @@ export function getProducts(req, res) {
  *
  * Body esperado:
  * {
- *   "name": "Mouse Gamer",
- *   "price": 79.99,
+ *   'name': 'Mouse Gamer',
+ *   'price': 79.99,
  * }
  *
  * Respuesta exitosa (201):
  * {
- *   "id": 2,
- *   "name": "Mouse Gamer",
+ *   'id': 2,
+ *   'name': 'Mouse Gamer',
  * }
  *
  * @example
@@ -126,8 +126,8 @@ export async function addProduct(req, res) {
     // 201 es el código HTTP estándar para recursos creados exitosamente
     res.writeHead(201, { 'Content-Type': 'application/json' });
 
-    // NOTA: Hay un error en la respuesta original, dice "Usuario creado" pero debería decir "Producto creado"
-    // También la propiedad debería ser "producto" no "usuario"
+    // NOTA: Hay un error en la respuesta original, dice 'Usuario creado' pero debería decir 'Producto creado'
+    // También la propiedad debería ser 'producto' no 'usuario'
     // Respuesta corregida:
     res.end(JSON.stringify({ message: 'Producto creado', producto: product }));
   });

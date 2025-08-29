@@ -1,5 +1,5 @@
-import { Municipio } from "../models/municipio.js";
-import { Estado } from "../models/estado.js";
+import { Municipio } from '../models/municipio.js';
+import { Estado } from '../models/estado.js';
 
 async function obtenerMunicipios(req, res) {
   try {

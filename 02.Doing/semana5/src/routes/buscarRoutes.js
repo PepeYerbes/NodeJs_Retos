@@ -39,14 +39,14 @@ const router = express.Router();
  *
  * Respuesta exitosa (200):
  * {
- *   "busqueda": "teclado",
- *   "categoria": "hardware",
- *   "mensaje": "Buscando teclado en la categoría hardware..."
+ *   'busqueda': 'teclado',
+ *   'categoria': 'hardware',
+ *   'mensaje': 'Buscando teclado en la categoría hardware...'
  * }
  *
  * Respuesta de error (400):
  * {
- *   "error": "Faltan parámetros en la ruta"
+ *   'error': 'Faltan parámetros en la ruta'
  * }
  */
 router.get('/buscar', logger, (req, res) => {

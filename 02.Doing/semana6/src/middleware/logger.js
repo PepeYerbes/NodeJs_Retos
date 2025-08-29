@@ -16,7 +16,7 @@ export function logger(req, res, next) {
   console.log(`[${time}] ${req.method} ${req.url}`);
 
   // Llamar a next() para pasar el control al siguiente middleware
-  // Sin esto, la petición se quedaría "colgada"
+  // Sin esto, la petición se quedaría 'colgada'
   next();
 }
 

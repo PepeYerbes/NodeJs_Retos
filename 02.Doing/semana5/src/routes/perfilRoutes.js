@@ -35,14 +35,14 @@ const router = express.Router();
  * @param {string} lang - Idioma del mensaje ('es' para español, 'fr' para francés, default para inglés)
  *
  * Ejemplo de uso:
- * GET /perfil/rodrigo → "Welcome rodrigo" (inglés por defecto)
- * GET /perfil/rodrigo?lang=es → "Bienvenido rodrigo" (español)
- * GET /perfil/maria?lang=fr → "Bienvenue maria" (francés)
+ * GET /perfil/rodrigo → 'Welcome rodrigo' (inglés por defecto)
+ * GET /perfil/rodrigo?lang=es → 'Bienvenido rodrigo' (español)
+ * GET /perfil/maria?lang=fr → 'Bienvenue maria' (francés)
  *
  * Respuesta exitosa (200):
  * {
- *   "mensaje": "Bienvenido rodrigo",
- *   "language": "es"
+ *   'mensaje': 'Bienvenido rodrigo',
+ *   'language': 'es'
  * }
  */
 router.get('/perfil/:usuario', logger, (req, res) => {

@@ -11,11 +11,11 @@
  */
 
 // Importa inquirer para interacción por consola.
-import inquirer from "inquirer";
+import inquirer from 'inquirer';
 // Importa boxen para mostrar resultados enmarcados.
-import boxen from "boxen";
+import boxen from 'boxen';
 // Importa chalk para colorear la salida en consola.
-import chalk from "chalk";
+import chalk from 'chalk';
 // Importa las funciones de conversión desde el módulo temperatura.js.
 import {
   convertCelsiusToFahrenheit,

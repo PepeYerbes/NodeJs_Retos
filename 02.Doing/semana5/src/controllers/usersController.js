@@ -31,8 +31,8 @@ import storage, { saveData } from '../storage.js';
  * Respuesta exitosa (200):
  * [
  *   {
- *     "id": 1,
- *     "name": "Juan Pérez",
+ *     'id': 1,
+ *     'name': 'Juan Pérez',
  *   }
  * ]
  *
@@ -60,7 +60,7 @@ export function getUsers(req, res) {
  *
  * Estructura esperada en req.body:
  * {
- *   "name": "María García",
+ *   'name': 'María García',
  * }
  *
  * @returns {Object} JSON con mensaje de confirmación y datos del usuario creado
@@ -68,7 +68,7 @@ export function getUsers(req, res) {
  * Respuesta exitosa (200):
  * {
  *   {
- *     "name": "María García",
+ *     'name': 'María García',
  *   }
  * }
  *

@@ -1,11 +1,12 @@
 import Cart from '../models/cart.js';
+import errorHandler from '../middlewares/errorHandler.js';
 
 async function getCarts(req, res) {
   try {
     const carts = await Cart.find().populate('user').populate('products.product');
     res.json(carts);
   } catch (error) {
-    res.status(500).send({ error });
+    next(error);
   }
 }
 
@@ -18,7 +19,7 @@ async function getCartById(req, res) {
     }
     res.json(cart);
   } catch (error) {
-    res.status(500).send({ error });
+    next(error);
   }
 }
 
@@ -31,7 +32,7 @@ async function getCartByUser(req, res) {
     }
     res.json(cart);
   } catch (error) {
-    res.status(500).send({ error });
+    next(error);
   }
 }
 
@@ -59,7 +60,7 @@ async function createCart(req, res) {
 
     res.status(201).json(newCart);
   } catch (error) {
-    res.status(500).send({ error });
+    next(error);
   }
 }
 
@@ -89,7 +90,7 @@ async function updateCart(req, res) {
       return res.status(404).json({ message: 'Cart not found' });
     }
   } catch (error) {
-    res.status(500).send({ error });
+    next(error);
   }
 }
 
@@ -146,7 +147,7 @@ async function addProductToCart(req, res) {
 
     res.status(200).json(cart);
   } catch (error) {
-    res.status(500).send({ error });
+    next(error);
   }
 }
 

@@ -39,7 +39,7 @@ inquirer.prompt([
   // Muestra el nombre en arte ASCII con el color seleccionado.
   figlet(answers.nombre, function (err, data) {
     if (err) {
-      console.log("Algo salió mal...");
+      console.log('Algo salió mal...');
       return;
     }
     console.log(chalk[answers.color](data));

@@ -29,7 +29,7 @@ export default router;
 /*
 NOTAS PARA ESTUDIANTES:
 - Este archivo es el punto central de organización de rutas
-- Usa el patrón de "Router Principal" para mantener el código modular
+- Usa el patrón de 'Router Principal' para mantener el código modular
 - Cada entidad (tasks, users) tiene su propio archivo de rutas
 - El router principal se importa en server.js con app.use(routes)
 - Esta estructura facilita el mantenimiento y escalabilidad del código

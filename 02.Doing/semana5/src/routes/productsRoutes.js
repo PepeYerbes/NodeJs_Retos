@@ -37,9 +37,9 @@ const router = express.Router();
  * {
  *   [
  *     {
- *       "id": 1,
- *       "name": "Laptop Gaming",
- *       "price": 1299.99,
+ *       'id': 1,
+ *       'name': 'Laptop Gaming',
+ *       'price': 1299.99,
  *     }
  *   ],
  * }
@@ -54,15 +54,15 @@ router.get('/products', logger, getProducts);
  *
  * Body esperado:
  * {
- *   "name": "Mouse Gamer",
- *   "price": 79.99,
+ *   'name': 'Mouse Gamer',
+ *   'price': 79.99,
  * }
  *
  * Respuesta exitosa (201):
  * {
  *   {
- *     "name": "Mouse Gamer",
- *     "price": 79.99,
+ *     'name': 'Mouse Gamer',
+ *     'price': 79.99,
  *   },
  * }
  *

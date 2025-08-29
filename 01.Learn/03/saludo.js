@@ -5,7 +5,7 @@
  * @returns {string} Mensaje de saludo personalizado.
  *
  * Ejemplo:
- *   saludar("Ana"); // "Hola, Ana"
+ *   saludar('Ana'); // 'Hola, Ana'
  */
 export default function saludar(nombre) {
   return `Hola, ${nombre}`;

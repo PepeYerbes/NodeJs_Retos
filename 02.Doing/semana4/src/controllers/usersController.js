@@ -34,8 +34,8 @@ import storage, { saveData } from '../storage.js';
  * Respuesta exitosa (200):
  * [
  *   {
- *     "id": 1,
- *     "name": "Juan Pérez",
+ *     'id': 1,
+ *     'name': 'Juan Pérez',
  *   }
  * ]
  *
@@ -72,13 +72,13 @@ export function getUsers(req, res) {
  *
  * Body esperado:
  * {
- *   "name": "María García",
+ *   'name': 'María García',
  * }
  *
  * Respuesta exitosa (201):
  * {
- *   "id": 2,
- *   "name": "María García",
+ *   'id': 2,
+ *   'name': 'María García',
  * }
  *
  * @example
